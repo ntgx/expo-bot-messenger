@@ -1,6 +1,7 @@
 const BootBot = require('bootbot');
 const config = require('./config');
 const menu = require('./menu');
+const start = require('./handlers/start');
 const message = require('./handlers/message');
 const postback = require('./handlers/postback');
 
@@ -16,11 +17,6 @@ bot.module(message);
 bot.module(postback);
 
 bot.setGreetingText("Hey there 😀 I'm the ICT Expo Ethiopia 2017 Bot 🤖 I'll be your assistant for the event. Click on 'Get Started' to see how i can help you");
-bot.setGetStartedButton((payload, chat) => {
-  chat.getUserProfile().then((user) => {
-    chat.say(`Hello, ${user.first_name} 😀 I'm the ICT Expo Ethiopia 2017 Bot 🤖 I'll be your assistant for the event.\nHere are some of the things i can help you with!`);
-    // TODO send menu cards
-  });
-});
+bot.setGetStartedButton(start);
 
 bot.start(config.PORT);

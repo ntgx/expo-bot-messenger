@@ -10,7 +10,9 @@
   "license": "MIT",
   "dependencies": {
     "bootbot": "^1.0.12",
-    "jsonfile": "^3.0.0"
+    "jsonfile": "^3.0.0",
+    "mongoose": "^4.10.6",
+    "mongoose-unique-validator": "^1.0.5"
   },
   "devDependencies": {
     "eslint": "^4.0.0",
