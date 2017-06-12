@@ -12,7 +12,7 @@ module.exports = (bot) => {
         chat.say('Tell me a little about yourself');
         break;
       case 'FLOOR_PLAN':
-        chat.sendAttachment('image', 'https://i.imgur.com/vypLwdv.png');
+        chat.sendAttachment('image', 'https://i.imgur.com/9IyPo9f.jpg');
         break;
       default:
         chat.say(`Postback: ${postback}`);
