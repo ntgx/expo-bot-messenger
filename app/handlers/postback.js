@@ -1,4 +1,5 @@
 const mainMenu = require('./../expo/main-menu');
+const speakers = require('./../expo/speakers');
 
 module.exports = (bot) => {
   bot.on('postback', (payload, chat) => {
@@ -10,6 +11,9 @@ module.exports = (bot) => {
         break;
       case 'PERSISTENT_MENU_REGISTER':
         chat.say('Tell me a little about yourself');
+        break;
+      case 'SPEAKERS':
+        speakers(chat);
         break;
       case 'FLOOR_PLAN':
         chat.sendAttachment('image', 'https://i.imgur.com/9IyPo9f.jpg');

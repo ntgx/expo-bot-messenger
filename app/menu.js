@@ -2,17 +2,17 @@ module.exports = (bot) => {
   bot.setPersistentMenu([
     {
       type: 'postback',
-      title: 'Main Menu',
+      title: '🤖 Main Menu',
       payload: 'PERSISTENT_MENU_MAIN_MENU',
     },
     {
       type: 'postback',
-      title: 'Tell us about yourself',
-      payload: 'PERSISTENT_MENU_REGISTER',
+      title: '✍️ Register',
+      payload: 'REGISTER',
     },
     {
       type: 'web_url',
-      title: 'Go to Website',
+      title: '🌐 Go to Website',
       url: 'http://ictexpoethiopia.com',
     },
   ]);

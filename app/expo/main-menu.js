@@ -66,7 +66,7 @@ module.exports = (chat) => {
       {
         type: 'postback',
         title: '💰 Register for Lotto',
-        payload: 'REGISTER_LOTTO',
+        payload: 'REGISTER',
       }, {
         type: 'postback',
         title: '❓ Ask me anything!',
