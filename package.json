@@ -9,7 +9,8 @@
   "author": "Nati",
   "license": "MIT",
   "dependencies": {
-    "bootbot": "^1.0.12"
+    "bootbot": "^1.0.12",
+    "jsonfile": "^3.0.0"
   },
   "devDependencies": {
     "eslint": "^4.0.0",

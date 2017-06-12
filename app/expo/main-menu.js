@@ -33,7 +33,7 @@ module.exports = (chat) => {
       }, {
         type: 'postback',
         title: '🎫 Panels/Speakers',
-        payload: 'PANELS',
+        payload: 'SPEAKERS',
       }],
     },
     {
