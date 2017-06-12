@@ -1,9 +1,19 @@
 const BootBot = require('bootbot');
+const mongoose = require('mongoose');
 const config = require('./config');
 const menu = require('./menu');
 const start = require('./handlers/start');
 const message = require('./handlers/message');
 const postback = require('./handlers/postback');
+
+// init db
+mongoose.Promise = global.Promise;
+mongoose.connect(config.EXPO_MONGO_URI);
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', () => {
+  console.log("we're connected!");
+});
 
 // init bot
 const bot = new BootBot({
