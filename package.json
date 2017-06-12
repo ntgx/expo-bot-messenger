@@ -2,6 +2,9 @@
   "name": "expo-bot",
   "version": "1.0.0",
   "description": "Messenger bot for the first international ICT Expo in Ethiopia ",
+  "scripts": {
+    "start": "node index.js"
+  },
   "main": "index.js",
   "author": "Nati",
   "license": "MIT",
