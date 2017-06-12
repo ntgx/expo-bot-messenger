@@ -2,8 +2,8 @@ const sendSummary = (convo) => {
   convo.ask((conv) => {
     convo.getUserProfile().then((user) => {
       const quickReplies = [
-        { content_type: 'text', title: 'Looks good!', payload: 'LOOKS_GOOD' },
-        { content_type: 'text', title: 'Again', payload: 'AGAIN' },
+        { content_type: 'text', title: 'Register', payload: 'REGISTER' },
+        { content_type: 'text', title: 'Never mind', payload: 'END' },
       ];
       conv.sendTextMessage(`Ok ${user.first_name}, here's what you told me about you\n- Interest Areas: ${convo.get('interest')} \n- Phone Number: ${convo.get('phone')}`, quickReplies);
     });
@@ -11,18 +11,18 @@ const sendSummary = (convo) => {
     console.log('answer', payload);
   }, [
     {
-      event: 'quick_reply:AGAIN',
+      event: 'quick_reply:END',
       callback: () => {
-        // TODO start registration convo again
-        convo.say('ok again');
+        convo.say('Cool, just tap on register again if you change your mind 😉');
         convo.end();
       },
     },
     {
-      event: 'quick_reply:LOOKS_GOOD',
+      event: 'quick_reply:REGISTER',
       callback: () => {
         // TODO save to db
-        convo.say('registered! thank you, i\'ll notify you here if you win!');
+        convo.say('registered for lotto! i\'ll notify you here if you win!');
+        // send gif money raining
         convo.end();
       },
     },
