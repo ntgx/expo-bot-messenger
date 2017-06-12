@@ -11,6 +11,9 @@ module.exports = (bot) => {
       case 'PERSISTENT_MENU_REGISTER':
         chat.say('Tell me a little about yourself');
         break;
+      case 'FLOOR_PLAN':
+        chat.sendAttachment('image', 'https://i.imgur.com/vypLwdv.png');
+        break;
       default:
         chat.say(`Postback: ${postback}`);
         break;
