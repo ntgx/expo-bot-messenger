@@ -1,15 +1,32 @@
 const sendSummary = (convo) => {
-  convo.getUserProfile().then((user) => {
-    convo.say({
-      text: `Ok ${user.first_name}, here's what you told me about you: \n- Interest Areas: ${convo.get('interest')} \n- Phone Number: ${convo.get('phone')}`,
-      quickReplies: [
-        { content_type: 'text', title: 'Looks good!', payload: '' },
-        { content_type: 'text', title: 'Try Again', payload: '' },
-      ],
+  convo.ask((conv) => {
+    convo.getUserProfile().then((user) => {
+      const quickReplies = [
+        { content_type: 'text', title: 'Looks good!', payload: 'LOOKS_GOOD' },
+        { content_type: 'text', title: 'Again', payload: 'AGAIN' },
+      ];
+      conv.sendTextMessage(`Ok ${user.first_name}, here's what you told me about you\n- Interest Areas: ${convo.get('interest')} \n- Phone Number: ${convo.get('phone')}`, quickReplies);
     });
-    convo.end();
-    // TODO save to db
-  });
+  }, (payload) => {
+    console.log('answer', payload);
+  }, [
+    {
+      event: 'quick_reply:AGAIN',
+      callback: () => {
+        // TODO start registration convo again
+        convo.say('ok again');
+        convo.end();
+      },
+    },
+    {
+      event: 'quick_reply:LOOKS_GOOD',
+      callback: () => {
+        // TODO save to db
+        convo.say('registered! thank you, i\'ll notify you here if you win!');
+        convo.end();
+      },
+    },
+  ]);
 };
 
 const askPhone = (convo) => {
