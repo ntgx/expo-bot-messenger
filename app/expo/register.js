@@ -1,3 +1,5 @@
+const saveLottoPlayer = require('./../db/save-lotto-player');
+
 const sendSummary = (convo) => {
   convo.ask((conv) => {
     convo.getUserProfile().then((user) => {
@@ -5,7 +7,7 @@ const sendSummary = (convo) => {
         { content_type: 'text', title: 'Register', payload: 'REGISTER' },
         { content_type: 'text', title: 'Never mind', payload: 'END' },
       ];
-      conv.sendTextMessage(`Ok ${user.first_name}, here's what you told me about you\n- Interest Areas: ${convo.get('interest')} \n- Phone Number: ${convo.get('phone')}`, quickReplies);
+      conv.sendTextMessage(`Ok ${user.first_name}, here's what you told me about you\n- Interest Areas: ${convo.get('interestAreas')} \n- Phone Number: ${convo.get('tel')}`, quickReplies);
     });
   }, (payload) => {
     console.log('answer', payload);
@@ -20,10 +22,7 @@ const sendSummary = (convo) => {
     {
       event: 'quick_reply:REGISTER',
       callback: () => {
-        // TODO save to db
-        convo.say('registered for lotto! i\'ll notify you here if you win!');
-        // send gif money raining
-        convo.end();
+        saveLottoPlayer(convo);
       },
     },
   ]);
@@ -32,7 +31,7 @@ const sendSummary = (convo) => {
 const askPhone = (convo) => {
   convo.ask('What\'s your phone number?', (payload, conv) => {
     const text = payload.message.text;
-    conv.set('phone', text);
+    conv.set('tel', text);
     sendSummary(conv);
   });
 };
@@ -40,7 +39,7 @@ const askPhone = (convo) => {
 const askInterests = (convo) => {
   convo.ask('What are your interest areas?', (payload, conv) => {
     const text = payload.message.text;
-    conv.set('interest', text);
+    conv.set('interestAreas', text);
     askPhone(conv);
   });
 };
