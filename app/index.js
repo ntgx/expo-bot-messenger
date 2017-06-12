@@ -1,6 +1,8 @@
 const BootBot = require('bootbot');
 const config = require('./config');
 const menu = require('./menu');
+const message = require('./handlers/message');
+const postback = require('./handlers/postback');
 
 // init bot
 const bot = new BootBot({
@@ -10,6 +12,8 @@ const bot = new BootBot({
 });
 
 bot.module(menu);
+bot.module(message);
+bot.module(postback);
 
 bot.setGreetingText("Hey there 😀 I'm the ICT Expo Ethiopia 2017 Bot 🤖 I'll be your assistant for the event. Click on 'Get Started' to see how i can help you");
 bot.setGetStartedButton((payload, chat) => {
