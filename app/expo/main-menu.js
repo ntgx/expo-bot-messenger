@@ -6,16 +6,16 @@ module.exports = (chat) => {
       image_url: 'https://i.imgur.com/U2k7ezr.png',
       buttons: [{
         type: 'postback',
-        title: 'Software',
+        title: '🌐 Software',
         payload: 'SOFTWARE',
       }, {
         type: 'postback',
-        title: 'Hardware',
+        title: '🕹 Hardware',
         payload: 'HARDWARE',
       }, {
         type: 'postback',
-        title: 'Floor Plan',
-        payload: 'FLOOR_PLAN',
+        title: '👉🏾 More',
+        payload: 'MORE',
       }],
     },
     {
@@ -24,15 +24,15 @@ module.exports = (chat) => {
       image_url: 'https://i.imgur.com/U2k7ezr.png',
       buttons: [{
         type: 'postback',
-        title: 'Daily Schedule',
+        title: '📅 Daily Schedule',
         payload: 'DAILY_SCHEDULE',
       }, {
         type: 'postback',
-        title: 'Conference',
+        title: '🎟 Conference',
         payload: 'CONFERENCE',
       }, {
         type: 'postback',
-        title: 'Panels/Speakers',
+        title: '🎫 Panels/Speakers',
         payload: 'PANELS',
       }],
     },
@@ -42,15 +42,15 @@ module.exports = (chat) => {
       image_url: 'https://i.imgur.com/U2k7ezr.png',
       buttons: [{
         type: 'postback',
-        title: 'Concerts',
+        title: '🎤 Concerts',
         payload: 'CONCERTS',
       }, {
         type: 'postback',
-        title: 'Startup Prooduct Demos',
+        title: '🚀 Startup Prooduct Demos',
         payload: 'STARTUP_DEMOS',
       }, {
         type: 'postback',
-        title: 'Other Events in the city',
+        title: '📅 Other Events',
         payload: 'OTHER_EVENTS',
       }],
     },
@@ -60,11 +60,16 @@ module.exports = (chat) => {
       image_url: 'https://i.imgur.com/U2k7ezr.png',
       buttons: [{
         type: 'postback',
-        title: 'Register for Lotto',
+        title: '📜 Floor Plan',
+        payload: 'FLOOR_PLAN',
+      },
+      {
+        type: 'postback',
+        title: '💰 Register for Lotto',
         payload: 'REGISTER_LOTTO',
       }, {
         type: 'postback',
-        title: 'Ask me anything!',
+        title: '❓ Ask me anything!',
         payload: 'ASK',
       }],
     },
