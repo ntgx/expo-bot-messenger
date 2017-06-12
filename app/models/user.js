@@ -12,6 +12,9 @@ const userSchema = new Schema({
   timezone: Number,
   gender: String,
   startedOn: Number,
+  registeredForLotto: { type: Boolean, default: false },
+  interestAreas: String,
+  tel: String,
 });
 
 userSchema.plugin(uniqueValidator);
