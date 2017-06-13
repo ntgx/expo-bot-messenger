@@ -20,25 +20,25 @@ module.exports = (chat) => {
     },
     {
       title: 'Schedule',
-      subtitle: 'The Schedule',
-      image_url: 'https://i.imgur.com/U2k7ezr.png',
+      subtitle: 'Find out the daily schedule, speakers and various events at the expo',
+      image_url: 'http://www.ictexpoethiopia.com/wp-content/uploads/2017/02/attend-new.jpg',
       buttons: [{
         type: 'postback',
-        title: '📅 Daily Schedule',
+        title: ' 📅 Daily Schedule',
         payload: 'DAILY_SCHEDULE',
       }, {
         type: 'postback',
-        title: '🎟 Conference',
-        payload: 'CONFERENCE',
+        title: '🎟 Speakers',
+        payload: 'SPEAKERS',
       }, {
         type: 'postback',
-        title: '🎫 Panels/Speakers',
-        payload: 'SPEAKERS',
+        title: '🎫 Events',
+        payload: 'EVENTS',
       }],
     },
     {
-      title: 'Other',
-      subtitle: 'More info',
+      title: 'More',
+      subtitle: 'Floor plan to help you find your way, register to win prizes and see sponsors',
       image_url: 'https://i.imgur.com/U2k7ezr.png',
       buttons: [{
         type: 'postback',
@@ -51,8 +51,8 @@ module.exports = (chat) => {
         payload: 'REGISTER',
       }, {
         type: 'postback',
-        title: '❓ Ask me anything!',
-        payload: 'ASK',
+        title: '💸 Sponsors',
+        payload: 'SPONSORS',
       }],
     },
   ];
