@@ -1,3 +1,4 @@
+const exhibitorCategories = require('./../expo/exhibitor-categories');
 const exhibitors = require('./../expo/exhibitors');
 const mainMenu = require('./../expo/main-menu');
 const register = require('./../expo/register');
@@ -21,6 +22,9 @@ module.exports = (bot) => {
         break;
       case 'PERSISTENT_MENU_REGISTER':
         chat.say('Tell me a little about yourself');
+        break;
+      case 'EXHIBITOR_CATEGORIES':
+        exhibitorCategories(chat);
         break;
       case 'SPEAKERS':
         speakers(chat);

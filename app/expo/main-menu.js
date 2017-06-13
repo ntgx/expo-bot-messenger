@@ -15,7 +15,7 @@ module.exports = (chat) => {
       }, {
         type: 'postback',
         title: '👉🏾 More',
-        payload: 'MORE',
+        payload: 'EXHIBITOR_CATEGORIES',
       }],
     },
     {
