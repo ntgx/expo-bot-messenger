@@ -1,10 +1,10 @@
 const BootBot = require('bootbot');
 const mongoose = require('mongoose');
 const config = require('./config');
-const menu = require('./menu');
 const start = require('./handlers/start');
 const message = require('./handlers/message');
 const postback = require('./handlers/postback');
+const persistentMenu = require('./menus/persistent-menu');
 
 // init db
 mongoose.Promise = global.Promise;
@@ -22,7 +22,7 @@ const bot = new BootBot({
   appSecret: config.APP_SECRET,
 });
 
-bot.module(menu);
+bot.module(persistentMenu);
 bot.module(message);
 bot.module(postback);
 

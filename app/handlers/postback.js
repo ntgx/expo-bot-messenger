@@ -1,8 +1,8 @@
 const exhibitorCategories = require('./../expo/exhibitor-categories');
 const exhibitors = require('./../expo/exhibitors');
-const mainMenu = require('./../expo/main-menu');
 const register = require('./../expo/register');
 const speakers = require('./../expo/speakers');
+const mainMenu = require('./../menus/main-menu');
 
 module.exports = (bot) => {
   bot.on('postback', (payload, chat) => {

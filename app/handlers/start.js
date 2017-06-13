@@ -1,5 +1,5 @@
 const User = require('./../models/user');
-const mainMenu = require('./../expo/main-menu');
+const mainMenu = require('./../menus/main-menu');
 
 /* eslint-disable no-param-reassign */
 module.exports = (payload, chat) => {
