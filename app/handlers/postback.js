@@ -14,6 +14,12 @@ module.exports = (bot) => {
       return;
     }
 
+    const moreSpeakers = /^MORE_SPEAKERS: (\d+)$/gi.exec(postback);
+    if (moreSpeakers) {
+      speakers(chat, Number(moreSpeakers[1]));
+      return;
+    }
+
     switch (postback) {
       case 'BOOTBOT_GET_STARTED':
         break;
@@ -27,7 +33,7 @@ module.exports = (bot) => {
         exhibitorCategories(chat);
         break;
       case 'SPEAKERS':
-        speakers(chat);
+        speakers(chat, 0);
         break;
       case 'REGISTER':
         register(chat);

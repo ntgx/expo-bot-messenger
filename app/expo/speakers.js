@@ -1,22 +1,19 @@
 const jsonfile = require('jsonfile');
 
-module.exports = (chat) => {
-  jsonfile.readFile('./data/speakers.json', (err, speakers) => {
+module.exports = (chat, startFrom) => {
+  jsonfile.readFile('./data/speakers.json', (err, data) => {
     if (err) {
       console.log('error reading file', err);
       return;
     }
-
+    const showMore = (startFrom + 9) < data.length;
+    const speakers = data.splice(startFrom, 9);
     const cards = speakers.map((speaker) => {
       return {
         title: speaker.name,
         subtitle: speaker.bio,
         image_url: speaker.pic,
         buttons: [{
-          type: 'postback',
-          title: '⭐️ Rate Talk',
-          payload: 'RATE',
-        }, {
           type: 'web_url',
           title: '🌐 Learn More',
           url: 'http://ictexpoethiopia.com', // TODO replace with speaker.url if data is available
@@ -24,6 +21,23 @@ module.exports = (chat) => {
       };
     });
 
+    const moreCard = {
+      title: 'More',
+      subtitle: 'Get more speakers or view all of them on the website',
+      image_url: 'https://i.imgur.com/U2k7ezr.png',
+      buttons: [{
+        type: 'postback',
+        title: '✔️ Send More',
+        payload: `MORE_SPEAKERS: ${startFrom + 9}`,
+      }, {
+        type: 'web_url',
+        title: '🌐 View All',
+        url: 'http://www.ictexpoethiopia.com/index.php/speakers/',
+        webview_height_ratio: 'tall',
+      }],
+    };
+
+    if (showMore) cards.push(moreCard);
     chat.sendGenericTemplate(cards);
   });
 };
