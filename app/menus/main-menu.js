@@ -37,24 +37,6 @@ module.exports = (chat) => {
       }],
     },
     {
-      title: 'Events',
-      subtitle: 'Various events at the expo and in the city',
-      image_url: 'https://i.imgur.com/U2k7ezr.png',
-      buttons: [{
-        type: 'postback',
-        title: '🎤 Concerts',
-        payload: 'CONCERTS',
-      }, {
-        type: 'postback',
-        title: '🚀 Startup Prooduct Demos',
-        payload: 'STARTUP_DEMOS',
-      }, {
-        type: 'postback',
-        title: '📅 Other Events',
-        payload: 'OTHER_EVENTS',
-      }],
-    },
-    {
       title: 'Other',
       subtitle: 'More info',
       image_url: 'https://i.imgur.com/U2k7ezr.png',
