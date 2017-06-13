@@ -1,12 +1,21 @@
+const exhibitors = require('./../expo/exhibitors');
 const mainMenu = require('./../expo/main-menu');
-const speakers = require('./../expo/speakers');
 const register = require('./../expo/register');
+const speakers = require('./../expo/speakers');
 
 module.exports = (bot) => {
   bot.on('postback', (payload, chat) => {
     const postback = payload.postback.payload;
 
+    const sendExhibitors = /^EXHIBITORS: (\d+), (\d+)$/gi.exec(postback);
+    if (sendExhibitors) {
+      exhibitors(chat, Number(sendExhibitors[1]), Number(sendExhibitors[2]));
+      return;
+    }
+
     switch (postback) {
+      case 'BOOTBOT_GET_STARTED':
+        break;
       case 'PERSISTENT_MENU_MAIN_MENU':
         mainMenu(chat);
         break;

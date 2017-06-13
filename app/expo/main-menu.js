@@ -7,11 +7,11 @@ module.exports = (chat) => {
       buttons: [{
         type: 'postback',
         title: '🌐 Software',
-        payload: 'SOFTWARE',
+        payload: 'EXHIBITORS: 1, 0',
       }, {
         type: 'postback',
         title: '🕹 Hardware',
-        payload: 'HARDWARE',
+        payload: 'EXHIBITORS: 2, 0',
       }, {
         type: 'postback',
         title: '👉🏾 More',
