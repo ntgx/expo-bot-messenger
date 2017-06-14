@@ -3,6 +3,7 @@ const exhibitors = require('./../expo/exhibitors');
 const events = require('./../expo/events');
 const register = require('./../expo/register');
 const speakers = require('./../expo/speakers');
+const days = require('./../expo/days');
 const mainMenu = require('./../menus/main-menu');
 
 module.exports = (bot) => {
@@ -32,6 +33,9 @@ module.exports = (bot) => {
         break;
       case 'EXHIBITOR_CATEGORIES':
         exhibitorCategories(chat);
+        break;
+      case 'DAILY_SCHEDULE':
+        days(chat);
         break;
       case 'EVENTS':
         events(chat);
