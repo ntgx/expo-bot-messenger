@@ -1,5 +1,6 @@
 const exhibitorCategories = require('./../expo/exhibitor-categories');
 const exhibitors = require('./../expo/exhibitors');
+const events = require('./../expo/events');
 const register = require('./../expo/register');
 const speakers = require('./../expo/speakers');
 const mainMenu = require('./../menus/main-menu');
@@ -31,6 +32,9 @@ module.exports = (bot) => {
         break;
       case 'EXHIBITOR_CATEGORIES':
         exhibitorCategories(chat);
+        break;
+      case 'EVENTS':
+        events(chat);
         break;
       case 'SPEAKERS':
         speakers(chat, 0);
