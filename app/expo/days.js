@@ -8,11 +8,11 @@ module.exports = (chat) => {
       buttons: [{
         type: 'postback',
         title: '🕘 Morning',
-        payload: 'SCHEDULE',
+        payload: `SCHEDULE: MORNING ${index}`,
       }, {
         type: 'postback',
         title: '🕐 Afternoon',
-        payload: 'SCHEDULE',
+        payload: `SCHEDULE: AFTERNOON ${index}`,
       }],
     };
   });

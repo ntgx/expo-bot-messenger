@@ -4,6 +4,7 @@ const events = require('./../expo/events');
 const register = require('./../expo/register');
 const speakers = require('./../expo/speakers');
 const days = require('./../expo/days');
+const schedule = require('./../expo/schedule');
 const mainMenu = require('./../menus/main-menu');
 
 module.exports = (bot) => {
@@ -19,6 +20,12 @@ module.exports = (bot) => {
     const moreSpeakers = /^MORE_SPEAKERS: (\d+)$/gi.exec(postback);
     if (moreSpeakers) {
       speakers(chat, Number(moreSpeakers[1]));
+      return;
+    }
+
+    const sch = /^SCHEDULE: (\w+) (\d+)$/gi.exec(postback);
+    if (sch) {
+      schedule(chat, sch[1], sch[2]);
       return;
     }
 
