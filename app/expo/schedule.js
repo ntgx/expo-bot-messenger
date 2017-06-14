@@ -9,7 +9,7 @@ module.exports = (chat, time, day) => {
     const cards = programs[day][time].map((program) => {
       return {
         title: program.title,
-        subtitle: `${program.time} (${program.venue})`,
+        subtitle: `${program.time} ${program.venue ? `(${program.venue})` : ''}`,
         image_url: program.pic,
         buttons: [{
           type: 'web_url',
