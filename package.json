@@ -9,6 +9,7 @@
   "author": "Nati",
   "license": "MIT",
   "dependencies": {
+    "apiai": "^4.0.2",
     "bootbot": "^1.0.12",
     "jsonfile": "^3.0.0",
     "mongoose": "^4.10.6",

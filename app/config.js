@@ -4,4 +4,5 @@ module.exports = {
   APP_SECRET: process.env.APP_SECRET,
   PORT: process.env.PORT,
   EXPO_MONGO_URI: process.env.EXPO_MONGO_URI,
+  EXPO_API_AI_TOKEN: process.env.EXPO_API_AI_TOKEN,
 };

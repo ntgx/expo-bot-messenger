@@ -46,6 +46,10 @@ ansi-styles@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/ansi-styles/-/ansi-styles-2.2.1.tgz#b432dd3358b634cf75e1e4664368240533c1ddbe"
 
+apiai@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/apiai/-/apiai-4.0.2.tgz#9a4d6921877e43cee4719eb73609da1d520ac857"
+
 argparse@^1.0.7:
   version "1.0.9"
   resolved "https://registry.yarnpkg.com/argparse/-/argparse-1.0.9.tgz#73d83bc263f86e97f8cc4f6bae1b0e90a7d22c86"
