@@ -8,9 +8,10 @@ module.exports = (convo) => {
     user.tel = convo.get('tel');
     return user.save();
   }).then(() => {
-    convo.say('Registered successfuly, I\'ll send you a message here if you win 😉');
-    convo.sendAttachment('image', 'https://i.imgur.com/9IyPo9f.jpg');
-    convo.end();
+    convo.say('Registered successfuly, I\'ll send you a message here if you win 😉', { typing: true }).then(() => {
+      convo.sendAttachment('image', 'https://media.giphy.com/media/3oz8xGoEtS4H6uUT8k/source.gif');
+      convo.end();
+    });
   }).catch((err) => {
     console.log('error updating user:', err);
     convo.say('Something went wrong please try again in a bit!');
