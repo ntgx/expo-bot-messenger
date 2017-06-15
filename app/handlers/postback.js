@@ -6,6 +6,7 @@ const speakers = require('./../expo/speakers');
 const days = require('./../expo/days');
 const schedule = require('./../expo/schedule');
 const sponsorTypes = require('./../expo/sponsor-types');
+const sponsors = require('./../expo/sponsors');
 const mainMenu = require('./../menus/main-menu');
 
 module.exports = (bot) => {
@@ -27,6 +28,12 @@ module.exports = (bot) => {
     const sch = /^SCHEDULE: (\w+) (\d+)$/gi.exec(postback);
     if (sch) {
       schedule(chat, sch[1], sch[2]);
+      return;
+    }
+
+    const spo = /^SPONSORS: (\w+)$/gi.exec(postback);
+    if (spo) {
+      sponsors(chat, spo[1]);
       return;
     }
 

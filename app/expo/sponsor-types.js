@@ -8,7 +8,7 @@ module.exports = (chat) => {
         {
           type: 'postback',
           title: 'View',
-          payload: 'VIEW_ORGANIZERS',
+          payload: 'SPONSORS: organizer',
         }],
     },
     {
@@ -19,7 +19,7 @@ module.exports = (chat) => {
         {
           type: 'postback',
           title: 'View',
-          payload: 'VIEW_SPONSORS',
+          payload: 'SPONSORS: sponsor',
         }],
     },
     {
@@ -30,7 +30,7 @@ module.exports = (chat) => {
         {
           type: 'postback',
           title: 'View',
-          payload: 'VIEW_CARRIER',
+          payload: 'SPONSORS: carrier_media',
         }],
     },
     {
@@ -41,7 +41,7 @@ module.exports = (chat) => {
         {
           type: 'postback',
           title: 'View',
-          payload: 'VIEW_PARTNERS',
+          payload: 'SPONSORS: partner',
         }],
     },
   ]);
