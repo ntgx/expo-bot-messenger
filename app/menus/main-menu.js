@@ -52,7 +52,7 @@ module.exports = (chat) => {
       }, {
         type: 'postback',
         title: '💸 Sponsors',
-        payload: 'SPONSORS',
+        payload: 'SPONSOR_TYPES',
       }],
     },
   ];

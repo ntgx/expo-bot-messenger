@@ -5,6 +5,7 @@ const register = require('./../expo/register');
 const speakers = require('./../expo/speakers');
 const days = require('./../expo/days');
 const schedule = require('./../expo/schedule');
+const sponsorTypes = require('./../expo/sponsor-types');
 const mainMenu = require('./../menus/main-menu');
 
 module.exports = (bot) => {
@@ -55,6 +56,9 @@ module.exports = (bot) => {
         break;
       case 'FLOOR_PLAN':
         chat.sendAttachment('image', 'https://i.imgur.com/9IyPo9f.jpg');
+        break;
+      case 'SPONSOR_TYPES':
+        sponsorTypes(chat);
         break;
       default:
         chat.say(`Postback: ${postback}`);
