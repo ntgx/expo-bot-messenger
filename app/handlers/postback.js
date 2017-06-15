@@ -62,7 +62,7 @@ module.exports = (bot) => {
         register(chat);
         break;
       case 'FLOOR_PLAN':
-        chat.sendAttachment('image', 'https://i.imgur.com/9IyPo9f.jpg');
+        chat.sendAttachment('image', 'https://i.imgur.com/cJT4yCo.jpg');
         break;
       case 'SPONSOR_TYPES':
         sponsorTypes(chat);

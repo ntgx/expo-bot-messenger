@@ -24,7 +24,7 @@ module.exports = (chat, startFrom) => {
     const moreCard = {
       title: 'More',
       subtitle: 'Get more speakers or view all of them on the website',
-      image_url: 'https://i.imgur.com/U2k7ezr.png',
+      image_url: 'https://i.imgur.com/2OkLsCy.png',
       buttons: [{
         type: 'postback',
         title: '✔️ Send More',

@@ -4,7 +4,7 @@ module.exports = (chat) => {
     return {
       title: `Day ${index + 1}`,
       subtitle: day,
-      image_url: 'https://i.imgur.com/U2k7ezr.png',
+      image_url: 'https://i.imgur.com/2OkLsCy.png',
       buttons: [{
         type: 'postback',
         title: '🕘 Morning',
