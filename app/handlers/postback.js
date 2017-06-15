@@ -56,18 +56,6 @@ module.exports = (bot) => {
       case 'FLOOR_PLAN':
         chat.sendAttachment('image', 'https://i.imgur.com/9IyPo9f.jpg');
         break;
-      case 'RATE':
-        chat.say({
-          text: 'Choose a score',
-          quickReplies: [
-            { content_type: 'text', title: '⭐️⭐️⭐️⭐️⭐️', payload: 'Rated!' },
-            { content_type: 'text', title: '⭐️⭐️⭐️⭐️', payload: 'Rated!' },
-            { content_type: 'text', title: '⭐️⭐️⭐️', payload: 'Rated!' },
-            { content_type: 'text', title: '⭐️⭐️', payload: 'Rated!' },
-            { content_type: 'text', title: '⭐️', payload: 'Rated!' },
-          ],
-        });
-        break;
       default:
         chat.say(`Postback: ${postback}`);
         break;
