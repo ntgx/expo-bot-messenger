@@ -7,6 +7,7 @@ const days = require('./../expo/days');
 const schedule = require('./../expo/schedule');
 const sponsorTypes = require('./../expo/sponsor-types');
 const sponsors = require('./../expo/sponsors');
+const floorPlan = require('./../expo/floor-plan');
 const mainMenu = require('./../menus/main-menu');
 
 module.exports = (bot) => {
@@ -43,9 +44,6 @@ module.exports = (bot) => {
       case 'PERSISTENT_MENU_MAIN_MENU':
         mainMenu(chat);
         break;
-      case 'PERSISTENT_MENU_REGISTER':
-        chat.say('Tell me a little about yourself');
-        break;
       case 'EXHIBITOR_CATEGORIES':
         exhibitorCategories(chat);
         break;
@@ -62,7 +60,7 @@ module.exports = (bot) => {
         register(chat);
         break;
       case 'FLOOR_PLAN':
-        chat.sendAttachment('image', 'https://i.imgur.com/cJT4yCo.jpg');
+        floorPlan(chat);
         break;
       case 'SPONSOR_TYPES':
         sponsorTypes(chat);
