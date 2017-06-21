@@ -9,32 +9,31 @@ const sponsorTypes = require('./../expo/sponsor-types');
 const sponsors = require('./../expo/sponsors');
 const floorPlan = require('./../expo/floor-plan');
 const mainMenu = require('./../menus/main-menu');
+const parseJSON = require('./../utils/parse-json');
 
 module.exports = (bot) => {
   bot.on('postback', (payload, chat) => {
     const postback = payload.postback.payload;
+    const data = parseJSON(postback);
 
-    const sendExhibitors = /^EXHIBITORS: (\d+), (\d+)$/gi.exec(postback);
-    if (sendExhibitors) {
-      exhibitors(chat, Number(sendExhibitors[1]), Number(sendExhibitors[2]));
-      return;
-    }
-
-    const moreSpeakers = /^MORE_SPEAKERS: (\d+)$/gi.exec(postback);
-    if (moreSpeakers) {
-      speakers(chat, Number(moreSpeakers[1]));
-      return;
-    }
-
-    const sch = /^SCHEDULE: (\w+) (\d+)$/gi.exec(postback);
-    if (sch) {
-      schedule(chat, sch[1], sch[2]);
-      return;
-    }
-
-    const spo = /^SPONSORS: (\w+)$/gi.exec(postback);
-    if (spo) {
-      sponsors(chat, spo[1]);
+    if (data) {
+      switch (data.type) {
+        case 'exhibitors':
+          exhibitors(chat, data.zone, data.startFrom);
+          break;
+        case 'speakers':
+          speakers(chat, data.startFrom);
+          break;
+        case 'schedule':
+          schedule(chat, data.time, data.day);
+          break;
+        case 'sponsors':
+          sponsors(chat, data.subType);
+          break;
+        default:
+          console.log(`Unhandled Postback: ${postback}`);
+          break;
+      }
       return;
     }
 
@@ -66,7 +65,7 @@ module.exports = (bot) => {
         sponsorTypes(chat);
         break;
       default:
-        chat.say(`Postback: ${postback}`);
+        console.log(`Unhandled Postback: ${postback}`);
         break;
     }
   });

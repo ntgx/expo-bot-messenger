@@ -8,7 +8,7 @@ module.exports = (chat) => {
         {
           type: 'postback',
           title: 'View',
-          payload: 'SPONSORS: organizer',
+          payload: JSON.stringify({ type: 'sponsors', subType: 'organizer' }),
         }],
     },
     {
@@ -19,7 +19,7 @@ module.exports = (chat) => {
         {
           type: 'postback',
           title: 'View',
-          payload: 'SPONSORS: sponsor',
+          payload: JSON.stringify({ type: 'sponsors', subType: 'sponsor' }),
         }],
     },
     {
@@ -30,7 +30,7 @@ module.exports = (chat) => {
         {
           type: 'postback',
           title: 'View',
-          payload: 'SPONSORS: carrier_media',
+          payload: JSON.stringify({ type: 'sponsors', subType: 'carrier_media' }),
         }],
     },
     {
@@ -41,7 +41,7 @@ module.exports = (chat) => {
         {
           type: 'postback',
           title: 'View',
-          payload: 'SPONSORS: partner',
+          payload: JSON.stringify({ type: 'sponsors', subType: 'partner' }),
         }],
     },
   ]);

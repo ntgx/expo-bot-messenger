@@ -17,7 +17,7 @@ module.exports = (payload, chat) => {
           console.log('error:', err.message);
         }
       } else { // on user saved
-        chat.say(`Hello, ${user.first_name} 😀 I'm the ICT Expo Ethiopia 2017 Bot 🤖 I'll be your assistant for the event.\nHere are some of the things i can help you with!`, { typing: true }).then(() => {
+        chat.say(`Hello ${user.first_name}, 😀 I'm the ICT Expo 🇪🇹 2017 Bot 🤖 I'll be your assistant for the event.\nHere are some of the things i can help you with!`, { typing: true }).then(() => {
           mainMenu(chat);
         });
       }

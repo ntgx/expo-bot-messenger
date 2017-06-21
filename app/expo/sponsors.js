@@ -6,19 +6,16 @@ module.exports = (chat, type) => {
       console.log('error reading file', err);
       return;
     }
-    const sponsorsInCat = sponsors.filter(sponsor => sponsor.type === type);
-    const cards = sponsorsInCat.map((sponsor) => {
-      return {
-        title: sponsor.name,
-        subtitle: sponsor.subtitle,
-        image_url: sponsor.logo,
-        buttons: [{
-          type: 'web_url',
-          title: '🌐 View Website',
-          url: sponsor.url,
-        }],
-      };
-    });
+    const cards = sponsors.filter(sponsor => sponsor.type === type).map(sponsor => ({
+      title: sponsor.name,
+      subtitle: sponsor.subtitle,
+      image_url: sponsor.logo,
+      buttons: [{
+        type: 'web_url',
+        title: '🌐 View Website',
+        url: sponsor.url,
+      }],
+    }));
 
     chat.sendGenericTemplate(cards);
   });

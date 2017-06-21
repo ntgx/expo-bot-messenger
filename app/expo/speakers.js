@@ -7,19 +7,16 @@ module.exports = (chat, startFrom) => {
       return;
     }
     const showMore = (startFrom + 9) < data.length;
-    const speakers = data.splice(startFrom, 9);
-    const cards = speakers.map((speaker) => {
-      return {
-        title: speaker.name,
-        subtitle: speaker.bio,
-        image_url: speaker.pic,
-        buttons: [{
-          type: 'web_url',
-          title: '🌐 Learn More',
-          url: 'http://ictexpoethiopia.com', // TODO replace with speaker.url if data is available
-        }],
-      };
-    });
+    const cards = data.splice(startFrom, 9).map(speaker => ({
+      title: speaker.name,
+      subtitle: speaker.bio,
+      image_url: speaker.pic,
+      buttons: [{
+        type: 'web_url',
+        title: '🌐 Learn More',
+        url: 'http://ictexpoethiopia.com', // TODO replace with speaker.url if data is available
+      }],
+    }));
 
     const moreCard = {
       title: 'More',
@@ -28,7 +25,7 @@ module.exports = (chat, startFrom) => {
       buttons: [{
         type: 'postback',
         title: '✔️ Send More',
-        payload: `MORE_SPEAKERS: ${startFrom + 9}`,
+        payload: JSON.stringify({ type: 'speakers', startFrom: startFrom + 9 }),
       }, {
         type: 'web_url',
         title: '🌐 View All',

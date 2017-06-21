@@ -7,18 +7,16 @@ module.exports = (chat) => {
       return;
     }
 
-    const cards = events.map((event) => {
-      return {
-        title: event.title,
-        subtitle: event.desc,
-        image_url: event.pic,
-        buttons: [{
-          type: 'postback',
-          title: '📢 Remind Me',
-          payload: 'SET_REMINDER',
-        }],
-      };
-    });
+    const cards = events.map(event => ({
+      title: event.title,
+      subtitle: event.desc,
+      image_url: event.pic,
+      buttons: [{
+        type: 'postback',
+        title: '📢 Remind Me',
+        payload: 'SET_REMINDER',
+      }],
+    }));
 
     chat.sendGenericTemplate(cards);
   });
