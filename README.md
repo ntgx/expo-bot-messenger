@@ -9,7 +9,7 @@ You can play with the bot [here](https://m.me/ictexpoethiopia) or by scanning th
 ## Progress
 - [x] Send Exhibitors, schedule, speakers, events, sponsors, floor plan
 - [x] Conversational form to register users for the lotto
-- [x] Use apiai to do NLP (smalltalk with the user and accepts commands)
+- [x] Use apiai to do NLP (smalltalk with the user and accepts commands, questions)
 - [ ] Set reminder feature for events and daily schedule
 - [ ] Collect website, tel and logo of all exhibitors, logos for sponsors & urls for learn more on the speaker cards
 - [ ] Show the github contributors within the bot
@@ -31,9 +31,7 @@ For your webhook URL you can deploy the app to heroku or if you want to run the 
 
 ## Contributing
 
-Contributions are welcome...even during the expo! There will be space there to hack on the bots[1] together & to show anyone interested the basics.
-
-Contributors will be shown within the bot...you can also share one link you want to promote if it'll be helpful to the visitors.
+Contributions are welcome...even during the expo! There will be space there to hack on the bots[1] together & to show anyone interested the basics. Contributors will be shown within the bot.
 
 [1] There's also a [Telegram Bot](https://github.com/ntgx/expo-bot-telegram)
 
@@ -51,6 +49,14 @@ The coding style must conform with the [Airbnb JavaScript Style Guide](https://g
 
 #### Git commit messages
 This hasn't been the case so far but try to use [Udacity's Git commit message style guide](https://udacity.github.io/git-styleguide/).
+
+## Screenshots
+##### The main menu
+![Expo Bot Screens 1](screenshots/screens1.png)
+##### Exhibitors, daily schedule, speakers
+![Expo Bot Screens 2](screenshots/screens2.png)
+##### Events, sponsors, register for lotto
+![Expo Bot Screens 3](screenshots/screens3.png)
 
 ## License
 
