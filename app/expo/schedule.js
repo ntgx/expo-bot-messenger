@@ -11,10 +11,9 @@ module.exports = (chat, time, day) => {
       subtitle: `${program.time} ${program.venue ? `(${program.venue})` : ''}`,
       image_url: program.pic,
       buttons: [{
-        type: 'web_url',
-        title: '🌐 See All',
-        url: 'http://www.ictexpoethiopia.com/index.php/program/',
-        webview_height_ratio: 'tall',
+        type: 'postback',
+        title: '📢 Remind Me',
+        payload: 'SET_REMINDER',
       }],
     }));
     chat.sendGenericTemplate(cards);
