@@ -53,7 +53,7 @@ module.exports = (bot) => {
         events(chat);
         break;
       case 'SPEAKERS':
-        speakers(chat, 0);
+        speakers(chat);
         break;
       case 'REGISTER':
         register(chat);

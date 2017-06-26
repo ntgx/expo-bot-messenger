@@ -1,6 +1,6 @@
 const jsonfile = require('jsonfile');
 
-module.exports = (chat, startFrom) => {
+module.exports = (chat, startFrom = 0) => {
   jsonfile.readFile('./data/speakers.json', (err, data) => {
     if (err) {
       console.log('error reading file', err);
