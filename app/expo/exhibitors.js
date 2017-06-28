@@ -9,21 +9,28 @@ module.exports = (chat, zone, startFrom = 0) => {
     const exhibitorsInZone = exhibitors.filter(e => e.zone === zone);
     const showMore = (startFrom + 9) < exhibitorsInZone.length;
     const exhibitorsForPage = exhibitorsInZone.splice(startFrom, 9);
-    const cards = exhibitorsForPage.map(exhibitor => ({
-      title: exhibitor.name,
-      subtitle: `Booth Numbers on Floor Plan: ${exhibitor.booth_numbers}`,
-      image_url: exhibitor.logo,
-      buttons: [{
-        type: 'web_url',
-        title: '🌐 Visit Website',
-        url: 'http://ictexpoethiopia.com', // TODO replace with exhibitor.url after data is collected
-      },
-      {
-        type: 'phone_number',
-        title: '📞 Call',
-        payload: '+251913183582', // TODO replace with exhibitor.tel after data is collected
-      }],
-    }));
+    const cards = exhibitorsForPage.map((exhibitor) => {
+      const card = {
+        title: exhibitor.name,
+        subtitle: `Booth Numbers on Floor Plan: ${exhibitor.booth_numbers}`,
+        image_url: exhibitor.logo,
+      };
+      if (exhibitor.url || exhibitor.tel) card.buttons = [];
+      if (exhibitor.url) {
+        card.buttons.push({
+          type: 'web_url',
+          title: '🌐 Visit Website',
+          url: exhibitor.url,
+        });
+      } if (exhibitor.tel) {
+        card.buttons.push({
+          type: 'phone_number',
+          title: '📞 Call',
+          payload: exhibitor.tel,
+        });
+      }
+      return card;
+    });
 
     const moreCard = {
       title: 'More',
