@@ -3,7 +3,7 @@ module.exports = (chat) => {
     {
       title: 'Exhibitors',
       subtitle: 'Get info on all the exhibitors at the expo',
-      image_url: 'https://i.imgur.com/2OkLsCy.png',
+      image_url: 'https://i.imgur.com/nrWQHJ5.jpg',
       buttons: [{
         type: 'postback',
         title: '🌐 Software',
